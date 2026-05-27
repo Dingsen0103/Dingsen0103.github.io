@@ -358,11 +358,12 @@ button {
   justify-content: space-between;
   gap: 14px;
   margin-bottom: 18px;
+  flex-wrap: wrap;
 }
 
 .segmented {
-  display: inline-grid;
-  grid-auto-flow: column;
+  display: flex;
+  flex-wrap: wrap;
   gap: 4px;
   padding: 4px;
   border: 1px solid var(--line);
@@ -587,7 +588,7 @@ button {
   }
 
   .segmented {
-    grid-auto-flow: row;
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
 
@@ -621,6 +622,6 @@ button {
   }
 
   .segmented {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
