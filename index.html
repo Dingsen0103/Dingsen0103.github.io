@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>西语小步</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="主导航">
+        <div class="brand">
+          <span class="brand-mark">ES</span>
+          <div>
+            <h1>西语小步</h1>
+            <p>中文母语者的西班牙语入门</p>
+          </div>
+        </div>
+
+        <nav class="nav-tabs" aria-label="学习区域">
+          <button class="nav-button active" data-view="today" aria-label="今日学习">
+            <span aria-hidden="true">⌂</span>
+            <span>今日</span>
+          </button>
+          <button class="nav-button" data-view="cards" aria-label="词汇卡片">
+            <span aria-hidden="true">◇</span>
+            <span>词卡</span>
+          </button>
+          <button class="nav-button" data-view="quiz" aria-label="小测验">
+            <span aria-hidden="true">✓</span>
+            <span>测验</span>
+          </button>
+          <button class="nav-button" data-view="review" aria-label="错题复习">
+            <span aria-hidden="true">↺</span>
+            <span>复习</span>
+          </button>
+        </nav>
+
+        <section class="study-stats" aria-label="学习进度">
+          <div>
+            <span class="stat-number" id="knownCount">0</span>
+            <span class="stat-label">已掌握</span>
+          </div>
+          <div>
+            <span class="stat-number" id="streakCount">0</span>
+            <span class="stat-label">连续天</span>
+          </div>
+        </section>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Nivel A1 · 第 1 阶段</p>
+            <h2 id="viewTitle">今日学习</h2>
+          </div>
+          <button class="icon-button" id="resetBtn" type="button" aria-label="重置学习记录" title="重置学习记录">↻</button>
+        </header>
+
+        <section class="view active" id="todayView">
+          <div class="lesson-layout">
+            <article class="lesson-panel">
+              <div class="lesson-heading">
+                <span class="pill">8 分钟</span>
+                <span class="pill green">可听可练</span>
+              </div>
+              <h3 id="lessonTitle"></h3>
+              <p id="lessonIntro"></p>
+
+              <div class="phrase-list" id="phraseList"></div>
+            </article>
+
+            <aside class="coach-panel">
+              <h3>中文学习提示</h3>
+              <p id="coachTip"></p>
+              <div class="note-box">
+                <strong>发音抓手</strong>
+                <p id="pronunciationTip"></p>
+              </div>
+              <button class="primary-action" id="startQuizBtn" type="button">开始今日小测</button>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="cardsView">
+          <div class="toolbar">
+            <div class="segmented" role="tablist" aria-label="词卡分类">
+              <button class="segment active" data-filter="all" type="button">全部</button>
+              <button class="segment" data-filter="greeting" type="button">问候</button>
+              <button class="segment" data-filter="travel" type="button">旅行</button>
+              <button class="segment" data-filter="food" type="button">饮食</button>
+            </div>
+            <label class="search">
+              <span>⌕</span>
+              <input id="cardSearch" type="search" placeholder="搜索中文 / 西语 / 英文">
+            </label>
+          </div>
+          <div class="card-grid" id="cardGrid"></div>
+        </section>
+
+        <section class="view" id="quizView">
+          <div class="quiz-shell">
+            <div class="quiz-card">
+              <div class="quiz-progress">
+                <span id="quizStep">1 / 6</span>
+                <span id="quizScore">0 分</span>
+              </div>
+              <h3 id="quizQuestion"></h3>
+              <div class="quiz-options" id="quizOptions"></div>
+              <p class="feedback" id="quizFeedback" aria-live="polite"></p>
+              <button class="primary-action" id="nextQuestionBtn" type="button" disabled>下一题</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="reviewView">
+          <div class="review-header">
+            <div>
+              <h3>错题复习</h3>
+              <p>你答错的表达会留在这里，适合明天再看一遍。</p>
+            </div>
+            <button class="secondary-action" id="clearMistakesBtn" type="button">清空错题</button>
+          </div>
+          <div class="review-list" id="reviewList"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
