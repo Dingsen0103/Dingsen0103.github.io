@@ -1,0 +1,13 @@
+{
+  "name": "物品查词 · 英语小本",
+  "short_name": "英语查词",
+  "start_url": "english.html",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#f6f3ee",
+  "theme_color": "#2e638f",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
