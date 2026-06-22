@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>物品查词 · 英语小本</title>
+    <link rel="stylesheet" href="english.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">日常物品 · 英语单词</p>
+          <h1>看到了，但念不出来？查一下。</h1>
+        </div>
+      </header>
+
+      <main class="main-panel">
+        <section class="lookup-panel">
+          <form id="lookupForm" class="lookup-form">
+            <label for="queryInput">输入物品的中文名称或描述</label>
+            <div class="lookup-row">
+              <input id="queryInput" type="text" placeholder="例如：水杯、充电器、雨伞" autocomplete="off">
+              <button type="submit" class="primary-action">查词</button>
+            </div>
+          </form>
+
+          <div id="lookupResult" class="result-card hidden">
+            <div class="result-head">
+              <h2 id="resultWord"></h2>
+              <button id="speakBtn" class="icon-button" type="button" title="发音" aria-label="发音">🔊</button>
+            </div>
+            <p id="resultPhonetic" class="phonetic"></p>
+            <p id="resultSource" class="source-query"></p>
+            <button id="saveWordBtn" class="secondary-action" type="button">收藏到生词本</button>
+          </div>
+
+          <p id="lookupStatus" class="status-msg" aria-live="polite"></p>
+        </section>
+
+        <section class="vocab-panel">
+          <div class="vocab-header">
+            <h2>我的生词本</h2>
+            <label class="search">
+              <span>⌕</span>
+              <input id="vocabSearch" type="search" placeholder="搜索生词本">
+            </label>
+          </div>
+          <div class="vocab-list" id="vocabList"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="english.js"></script>
+  </body>
+</html>
